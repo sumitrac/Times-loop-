@@ -1,0 +1,31 @@
+class Integer
+  def ordinal
+    case self % 10
+    when 1
+      return "#{self}st"
+    when 2
+      return "#{self}nd"
+    when 3
+      return "#{self}rd"
+    else
+      return "#{self}th"
+    end
+  end
+end 
+
+puts "Let's play a numbers game."
+print "How many numbers would you like to enter? >"
+number = gets.chomp.to_i
+
+number.times do |time|
+  print "\n\nEnter the #{(time + 1).ordinal} positive integer:"
+  user_int = gets.chomp.to_i
+
+  if user_int % 3 == 0
+    print "#{user_int} is divisible by 3."
+  else
+    print "#{user_int} is not divisible by 3."
+  end
+end
+
+puts "\n\nEnd of the Game"
